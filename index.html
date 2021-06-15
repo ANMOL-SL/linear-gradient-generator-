@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+        <title>Page Title</title>
+
+        <!-- importing ILUS2-->     
+
+        <link href="https://raw.githack.com/atoms19/ILUS.CSS/main/ILUS2.min.css" rel="stylesheet"></link>
+
+        <!-- importing material icons -->
+
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+        <!-- importing jquery -->
+
+        <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
+        
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+
+    <!-- card is the container of the code -->
+
+     <div class="card">
+
+    <center>
+
+     <div class="card linear-card" id="card"></div>  
+
+     </center>
+
+     <center>
+
+     <!--all color inputs -->
+
+     <input class="color-inp" id="color1" type="color">
+
+     <input class="color-inp" id="color2" type="color">
+
+     <input class="color-inp" id="color3" type="color">
+
+     <input class="color-inp" id="color4" type="color">
+
+     <br>
+
+     <label>Color 1</label>
+
+     <input type="range" class="slider" step="0.01" min="0" max="1" id="op1"for="col1" value="1">    
+
+     <br>
+
+     <label>Color 2</label>
+
+     <input type="range" class="slider" step="0.01" min="0" max="1" id="op2"for="col2" value="1">
+
+     <br>
+
+     <label>Color 3</label>
+
+     <input type="range" class="slider" step="0.01" min="0" max="1" id="op3"for="col3" value="1">    
+
+     <br>
+
+     <label>Color 4</label>
+
+     <input type="range" class="slider" step="0.01" min="0" max="1" id="op4"for="col4" value="1">
+
+     <br>
+
+     <!-- select directions -->
+
+     <select id="select" >
+
+         <option>to top</option>
+
+         <option>to right</option>
+
+         <option>to bottom</option>
+
+         <option>to left</option>
+
+         <option>to top right</option>
+
+         <option>to bottom left</option>
+
+         <option>to bottom right</option>
+
+         <option>to top left</option>
+
+     </select>
+
+     <br>
+
+     <!-- select number of gradients-->
+
+     <select id="select2">
+
+       <option value="2_color">2 Color gradient</option>  
+
+       <option value="3_color">3 Color gradient</option>  
+
+       <option value="4_color">4 Color gradient</option>  
+
+     </select>
+
+     <br>
+
+     <!-- Textarea in which text for coping will come-->
+
+     <textarea id="copy-txt" readonly></textarea>
+
+     <br>
+
+     <!-- button for getting gradient-->
+
+     <button onclick="Set()" class="btn btn-copy">Set</button>
+
+     <br>
+
+     <!-- button for coping the gradient code-->
+
+     <button onclick="copy()" class="btn btn-copy">Copy</button>
+
+     </center>
+
+     </div>  
+
+     <div id="workless-div"></div>
+<script>
+    function Set(){
+
+//for converting the hex code in 8 digit hex code
+
+    function getHex(e){
+
+  return Math.round(e * 255).toString(16);
+
+}
+
+// s defins number of gradients
+
+var s = document.getElementById("select2").value;
+
+//linVal is the output gradient 
+
+ let linVal = `background-image:linear-gradient(${select.value}, ${color1.value}${getHex(op1.value)}, ${color2.value}${getHex(op2.value)})`;
+
+        if(s==="2_color"){
+
+        //if number of gradients selected is 2 then it will show only two gradient 
+
+         linVal = `background-image:linear-gradient(${select.value}, ${color1.value}${getHex(op1.value)}, ${color2.value}${getHex(op2.value)})`;   
+
+        }
+
+        if(s==="3_color"){
+
+        //if number of gradients selected is 3 then it will show 3 gradient 
+
+            linVal = `background-image:linear-gradient(${select.value}, ${color1.value}${getHex(op1.value)}, ${color2.value}${getHex(op2.value)},${color3.value}${getHex(op3.value)})`;
+
+        }
+
+        if(s==="4_color"){
+
+        //if number of gradients selected is 4 then it will show all gradient 
+
+            linVal = `background-image:linear-gradient(${select.value}, ${color1.value}${getHex(op1.value)}, ${color2.value}${getHex(op2.value)},${color3.value}${getHex(op3.value)},${color4.value}${getHex(op4.value)})`;
+
+        }
+
+        document.getElementById("card").style=linVal
+
+//output gradient
+
+document.getElementById("copy-txt").innerText=linVal;
+
+//output code
+
+        }
+
+        
+
+function copy(){
+
+//this function will make text in textarea copy
+
+   textAreaEle = document.getElementById("copy-txt");
+
+    // Focus and select the text
+
+    textAreaEle.focus();
+
+    textAreaEle.select();
+
+    // Execute the "copy" command
+
+    try {
+
+        document.execCommand('copy');
+
+    } catch (err) {
+
+        // Unable to copy
+
+        alert("Error, unable to copy.");
+
+    }
+
+    
+
+    
+
+}
+
+//created by ANMOL  
+      </script>
+      <style>
+      body {
+
+        background:#00c4fa;
+
+        color:#fff;
+
+        font-family: 'Roboto', sans-serif;
+
+}
+
+.linear-card{
+
+    height:20vh;
+
+    width:50%;
+
+    border-radius: 27px;
+
+background: #dde3eb;
+
+box-shadow:  27px 27px 54px #d0d5dd,
+
+             -27px -27px 54px #eaf1f9;
+
+             
+
+}
+
+#card{
+
+    background:#01c0fa;
+
+}
+
+.color-inp{
+
+    background:#01c0fa;
+
+    height:50px;
+
+    width:50px;
+
+    margin:10px;
+
+    border:none;
+
+   
+
+    padding:5px;
+
+    border-radius:5px;
+
+}
+
+#copy-txt{
+
+    border:none;
+
+    background:#eee;
+
+    outline:none;
+
+}
+
+.btn-copy{
+
+    width:50%;
+
+    background:#01c0fa;
+
+}
+
+.card{
+
+   border-radius: 11px;
+
+background: #00aeff;
+
+box-shadow:  13px 13px 58px #0092d6,
+
+             -13px -13px 58px #00caff;
+
+}
+
+select{
+
+    margin:10px;
+
+   color:#fff; 
+
+padding:5px;
+
+width:30%;
+
+background:#01c0fa;
+
+outline:none;
+
+border-radius:5px;
+
+text-align:center;
+
+border:none;
+
+}
+
+@media screen and (max-width: 600px) {
+
+.btn-copy{
+
+    width:80%;
+
+    background:#01c0fa;
+
+}
+
+select{
+
+    margin:10px;
+
+    background:#eee;
+
+padding:5px;
+
+width:50%;
+
+background:#01c0fa;
+
+outline:none;
+
+border-radius:10px;
+
+text-align:center;
+
+}
+
+#card{
+
+    background:#01c0fa;
+
+    width:90%;
+
+}
+
+.slider{
+
+    width:90%;
+
+    border-radius:3px;
+
+    background:#00c0fa;
+
+}
+
+.slider::-webkit-slider-thumb {
+
+  -webkit-appearance: none;
+
+appearance: none;
+
+  width: 25px;
+
+  height: 25px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+}
+
+}
+
+.slider{
+
+    width:50%;
+
+    border-radius:3px;
+
+    background:#00c0fa;
+
+}
+
+.slider::-webkit-slider-thumb {
+
+  -webkit-appearance: none;
+
+appearance: none;
+
+  width: 25px;
+
+  height: 25px;
+
+  border-radius: 50%;
+
+  cursor: pointer;
+
+}
+
+/*Created by ANMOL*/
+      </style>
+    </body>
+
+</html>
+
