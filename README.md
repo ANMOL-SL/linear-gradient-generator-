@@ -1,2 +1,8 @@
-# linear-gradient-generator-<br> hello welcome to my code 
-generate linear Gradients from this code <p id="rotate">🌟</p>
+# linear-gradient-generator-<br> 
+⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
+hello welcome to my code <br>
+generate linear gradient feom this code <br>
+✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
+view code : ✔️
+<br>
+://https://anmol-sl.github.io/linear-gradient-generator-
