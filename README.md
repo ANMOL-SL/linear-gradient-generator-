@@ -1,7 +1,7 @@
 # linear-gradient-generator-<br> 
 ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
 hello welcome to my code <br>
-generate linear gradient feom this code <br>
+generate linear gradient from this code <br>
 
 ✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨✨
 <br>
